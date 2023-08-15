@@ -7,14 +7,5 @@ import { DataService } from './services/data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  {
-  pokemon : any [] = [];
-  constructor(private dataService: DataService) { }
 
-  generatePoke(): void {
-    this.pokemon = []; 
-    this.dataService.getPokemonsData().subscribe((data: any) => {
-      this.pokemon.push(data);
-      console.log(this.pokemon)
-    });
-  }
 }

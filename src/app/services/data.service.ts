@@ -6,12 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  constructor(
-    private http: HttpClient
-  ) 
-  {}
+  private pokemonData: any[] = [];
 
-  //get pokemons data 
+  constructor(private http: HttpClient) 
+  {}
   getPokemonsData(){
     let randomId = Math.floor(Math.random() * 151) +1;
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${randomId}/?generation=1`)

@@ -1,0 +1,30 @@
+<div class="content" role="main">
+
+  <!-- Next Steps -->
+  <h2>Generate your pokemon</h2>
+
+  <input type="hidden">
+
+  <div class="card-containerPokemon">
+    <button class="cardPokemon card-small" (click)="generatePoke()">
+      <span>Catch one pokemon</span>
+    </button>
+  </div>
+  <!-- Pokemon card -->
+<div *ngFor="let detail of pokemon" class="card" style="width: 18rem;">
+    <img class="card-img-top" src={{detail.sprites.front_default}} alt="Sprite pokémon">
+    <div class="card-body">
+      <h5 class="card-title">{{detail.name}}</h5>
+      <p class="card-text">{{detail.base_experience}}</p>
+    </div>
+    <!-- <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{detail.types.type}}</li>
+      <li class="list-group-item">{{detail.name}}</li>
+      <li class="list-group-item">{{detail.name}}</li>
+    </ul> -->
+    <div class="card-body">
+      <a routerLink="/pokemon-card/detail.id" routerLinkActive="acive" ariaCurrentWhenActive="page" class="card-link">view more</a>
+      <a href="#" class="card-link">add it in your pocket</a>
+    </div>
+  </div>
+ 
