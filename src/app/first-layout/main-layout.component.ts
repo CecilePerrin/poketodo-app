@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from '../services/data.service';
+import { DataService } from '../shared/services/data.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -8,12 +8,20 @@ import { DataService } from '../services/data.service';
 })
 export class MainLayoutComponent {
   pokemon : any [] = [];
+  pokemonList : any[] = [];
 
   constructor(private dataService: DataService) { }
 
+  getAllPokemon(): void {
+    this.pokemonList = [];
+    this.dataService.getAllPokemonsData().subscribe((data: any[]) => {
+      this.pokemonList = data; 
+    });
+  }
+
   generatePoke(): void {
     this.pokemon = []; 
-    this.dataService.getPokemonsData().subscribe((data: any) => {
+    this.dataService.getOnePokemonsData().subscribe((data: any) => {
       this.pokemon.push(data);
     });
   }

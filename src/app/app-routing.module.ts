@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PokedexComponent } from './pokemon/pokedex/pokedex.component';
-import { PokemonCardComponent } from './pokemon/pokemon-card/pokemon-card.component';
+import { PokedexComponent } from './modules/pokedex/pokedex.component';
+import { PokemonCardComponent } from './shared/components/pokemon-card/pokemon-card.component';
 import { AppComponent } from './app.component';
-import { MainLayoutComponent } from './main-layout/main-layout.component';
+import { MainLayoutComponent } from './first-layout/main-layout.component';
 
 const routes: Routes = [
   { path: 'main-layout', component: MainLayoutComponent},
